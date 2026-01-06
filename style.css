@@ -1,0 +1,400 @@
+/* =====================
+   GLOBAL RESET
+===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #ffffff;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* =====================
+   HEADER & NAVIGATION
+===================== */
+/* Header */
+.header {
+    height: 100px;
+    background: #0a3d62;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+}
+
+/* Brand (Logo + Text together) */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* space between logo & text */
+}
+
+/* Logo */
+.logo {
+    height: 55px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Brand container */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* MAIN LOGO TEXT */
+.logo-text {
+    font-size: 28px;           /* size of SREE */
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-family: Forte;
+}
+.logo-text {
+    font-size: 50px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.logo-text::first-letter {
+    color: #f1c40f;
+    font-size: 80px;    
+}
+
+.logo-text {
+    color: #dcdcdc;
+}
+
+/* SUB TEXT */
+.brand-text {
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-family: Berlin Sans FB Demi;
+    text-transform: uppercase;
+    color: #f1f1f1;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 600;
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background: #f1c40f;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.4s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* =====================
+   HERO IMAGE ANIMATION
+===================== */
+.hero {
+    height: 90vh;
+    background:
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url("images/home-bg.jpg") center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    animation: zoomBg 12s infinite alternate;
+}
+
+@keyframes zoomBg {
+    from { background-size: 100%; }
+    to { background-size: 110%; }
+}
+
+.hero-content {
+    animation: fadeUp 1.5s ease;
+}
+
+.hero h1 {
+    font-size: 46px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+/* =====================
+   BUTTON ANIMATION
+===================== */
+.btn {
+    background: #f1c40f;
+    color: #000;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.4s;
+}
+
+.btn:hover {
+    background: #d4ac0d;
+    transform: scale(1.05);
+}
+
+/* =====================
+   SECTIONS
+===================== */
+.section {
+    padding: 70px 100px;
+    text-align: center;
+    animation: fadeUp 1.2s ease;
+}
+
+.gray {
+    background: #f5f6fa;
+}
+
+.section h2 {
+    font-size: 32px;
+    color: #0a3d62;
+    margin-bottom: 20px;
+}
+
+/* =====================
+   SERVICE CARDS ANIMATION
+===================== */
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+    color: #0a3d62;
+    margin-bottom: 10px;
+}
+
+/* =====================
+   CONTACT FORM
+===================== */
+.contact-form {
+    max-width: 500px;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.contact-form button {
+    background: #0a3d62;
+    color: #fff;
+    border: none;
+    padding: 14px;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 30px;
+    transition: 0.4s;
+}
+
+.contact-form button:hover {
+    background: #062c46;
+    transform: scale(1.03);
+}
+
+/* =====================
+   FOOTER
+===================== */
+footer {
+    background: #0a3d62;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+}
+
+/* =====================
+   ANIMATIONS
+===================== */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media(max-width: 768px) {
+    header {
+        padding: 15px 25px;
+        flex-direction: column;
+    }
+
+    nav {
+        margin-top: 10px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .section {
+        padding: 50px 25px;
+    }
+}
+.logo img {
+    height: 55px;
+    width: auto;
+}
+/* Bright mail color */
+.contact-item a[href^="mailto"] {
+    color: #f1c40f;   /* bright gold */
+    font-weight: 600;
+}
+.contact-item a[href^="mailto"] {
+    color: #00eaff;
+    text-shadow: 0 0 6px rgba(0, 234, 255, 0.8);
+}
+
+.contact-item.mail i,
+.contact-item.mail a {
+    color: #f1c40f;
+}
+/* Home contact section */
+.home-contact {
+    padding: 70px 50px;
+    background: #f5f6fa;
+    text-align: center;
+}
+
+.home-contact-title {
+    font-size: 32px;
+    color: #0a3d62;
+    margin-bottom: 40px;
+}
+
+/* Cards layout */
+.home-contact-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* Individual card */
+.home-card {
+    background: #ffffff;
+    padding: 35px 25px;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    transition: 0.4s;
+}
+
+.home-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Icon */
+.home-card i {
+    font-size: 30px;
+    color: #f1c40f;
+    margin-bottom: 15px;
+}
+
+/* Text */
+.home-card h3 {
+    color: #0a3d62;
+    margin-bottom: 10px;
+}
+
+.home-card p {
+    font-size: 15px;
+    color: #333;
+}
+
+/* Highlight mail */
+.highlight-mail {
+    color: #f1c40f;
+    font-weight: 600;
+}
+/* Full screen entry */
+#logo-entry {
+    background: linear-gradient(135deg, #00eaff, #1e3799);
+
+    position: fixed;
+    inset: 0;
+    background: #0a3d62; /* website main color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+/* Logo image */
+.entry-logo {
+    width: 220px;
+    max-width: 70%;
+    animation: logoZoom 1.8s ease forwards;
+}
+
+/* Animation */
+@keyframes logoZoom {
+    0% {
+        opacity: 0;
+        transform: scale(0.6);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.entry-logo {
+    filter: drop-shadow(0 0 20px rgba(186, 185, 183, 0.974));
+}
